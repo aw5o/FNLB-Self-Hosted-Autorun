@@ -5,7 +5,11 @@ $RegPath = "HKCU:\Software\Microsoft\Windows\CurrentVersion\Run"
 
 try {
     Remove-ItemProperty -Path $RegPath -Name $AppName -ErrorAction Stop
-    Write-Host "✅ FNLB autostart entry removed."
+    Write-Host "`n[OK] FNLB autostart entry removed."
 } catch {
-    Write-Warning "ℹ️ Autostart entry not found or already removed."
+    Write-Host "`n[Info] Could not remove autostart entry (maybe it wasn't set)."
+    Write-Host "Error: $($_.Exception.Message)"
 }
+
+Write-Host "`nPress any key to exit..."
+[void][System.Console]::ReadKey($true)

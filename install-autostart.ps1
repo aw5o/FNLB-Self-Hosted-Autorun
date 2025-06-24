@@ -8,7 +8,11 @@ $RegPath = "HKCU:\Software\Microsoft\Windows\CurrentVersion\Run"
 
 try {
     New-ItemProperty -Path $RegPath -Name $AppName -Value $Command -PropertyType String -Force | Out-Null
-    Write-Host "✅ FNLB will now autostart with Windows."
+    Write-Host "`n[OK] FNLB will now autostart with Windows."
 } catch {
-    Write-Error "❌ Failed to set autostart: $_"
+    Write-Host "`n[Error] Failed to set autostart."
+    Write-Host "Error: $($_.Exception.Message)"
 }
+
+Write-Host "`nPress any key to exit..."
+[void][System.Console]::ReadKey($true)
