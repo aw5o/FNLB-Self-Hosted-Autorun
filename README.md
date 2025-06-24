@@ -1,6 +1,6 @@
 # FNLB-Self-Hosted-Autorun
 
-This utility enables automatic startup of your self-hosted [FNLB](https://fnlb.net/) application when Windows boots. It includes both installation and uninstallation scripts using PowerShell.
+This utility enables automatic startup of your self-hosted [FNLB](https://fnlb.net/) application when Windows boots. It includes simple PowerShell scripts to register or unregister your app as a startup program.
 
 ---
 
@@ -13,8 +13,9 @@ This utility enables automatic startup of your self-hosted [FNLB](https://fnlb.n
 
 ## 🚀 Quick Setup
 
-1. Place the `install-autostart.ps1` and `uninstall-autostart.ps1` scripts in the **same folder** as your `index.js` FNLB app.
-2. **Right-click** `install-autostart.ps1` and select **Run with PowerShell**.
+1. Make sure you have **Node.js** installed and available in your system PATH.
+2. Place `install-autostart.ps1` and `uninstall-autostart.ps1` in the **same folder** as your `index.js` FNLB app.
+3. **Right-click** `install-autostart.ps1` and select **Run with PowerShell**.
 
 > 🛡️ If you see an execution policy warning, run the following once in PowerShell:
 > ```powershell
@@ -30,16 +31,24 @@ This utility enables automatic startup of your self-hosted [FNLB](https://fnlb.n
 
 ---
 
-## 🌐 FNLB Resources
+## 🔗 Related Projects
 
-- **Website:** [fnlb.net](https://fnlb.net/)
-- **Status Page:** [status.fnlb.net](https://status.fnlb.net/)
-- **Discord:** [discord.fnlb.net](https://discord.fnlb.net/)
+- **Official FNLB Self-Hosted GitHub:**  
+  [github.com/Fortnite-LobbyBot/Self-Hosted](https://github.com/Fortnite-LobbyBot/Self-Hosted)
 
 ---
 
-## 📂 Repository Use
+## 🌐 FNLB Resources
 
-You can safely include these scripts in your self-hosted FNLB GitHub repo or distribute them alongside your cluster launcher.
+- **Website:** [https://fnlb.net](https://fnlb.net)
+- **Status Page:** [https://status.fnlb.net](https://status.fnlb.net)
+- **Discord:** [https://discord.fnlb.net](https://discord.fnlb.net)
 
-No path configuration is needed — the script auto-detects its folder and launches `node index.js` from there.
+---
+
+## 📝 Notes
+
+- These scripts require no hardcoded paths — they automatically detect their current directory.
+- The scripts launch `node index.js` using the standard `cmd` shell in the same directory.
+
+Perfect for self-hosters who want FNLB to run on boot without modifying startup folders or system config manually.
