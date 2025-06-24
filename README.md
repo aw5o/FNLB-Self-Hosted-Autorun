@@ -8,7 +8,7 @@ This utility enables automatic startup of your self-hosted [FNLB](https://fnlb.n
 
 - `install-autostart.ps1` – Adds the FNLB app to Windows startup.
 - `uninstall-autostart.ps1` – Removes the app from Windows startup.
-
+- `run-selfhost.ps1` – Launches FNLB selfhosting application.
 ---
 
 ## 🚀 Quick Setup
